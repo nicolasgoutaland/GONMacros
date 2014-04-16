@@ -21,25 +21,28 @@ SuppressPerformSelectorLeakWarning([self performSelector:@selector(mySelector)])
 ```
 
 ### GONFRCMacros.h
-Provide some macros to generate default implementation in view controllers using FRC and tableviews.
-You can use only ONE  of this method at a time per view controller.
-You have to declare and configure toy FRC in order to use theses macros.
-Do not forget to set your view controller as delegate of your FRC.
+Provide some macros to generate default implementation in view controllers using `NSFetchedResultsController` and `UITableView` / `UICollectionView`.
+You can use only ONE of these methods at a time per `UIViewController`.
+You have to declare and configure your `NSFetchedResultsController` in order to use theses macros.
+Do not forget to set your `UIViewVontroller` as delegate of your `NSFetchedResultsController`.
 
 <br/>_FRC_TABLEVIEW_DEFAULT_IMPLEMENTATION_<br/>
-Will provide a default implementation for your class FRC.
-Assume that your view controller has a __self.tableView__ UITableView property.
-Default implementation will simply add / remove section and rows from your table view.
-__tableView:willDisplayCell:forRowAtIndexPath:__ will be called is an object is refreshed, so you have to implement this method in your view controller.
+Will provide a default implementation for your class' `NSFetchedResultsController`.
+Assume that your view controller has a __self.tableView__ `UITableView` property.
+Default implementation will simply add / remove section and rows from your `UITableView`.
+__tableView:willDisplayCell:forRowAtIndexPath:__ will be called is an object is refreshed, so you have to implement this method in your `UIViewController`.
+```
+FRC_TABLEVIEW_DEFAULT_IMPLEMENTATION
+```
 
 <br/>_FRC_TABLEVIEW_DEFAULT_IMPLEMENTATION_FOR_TABLEVIEW(aTableView)_<br/>
-Same as __FRC_TABLEVIEW_DEFAULT_IMPLEMENTATION__ but allowing you to specify another property for your tableView
+Same as __FRC_TABLEVIEW_DEFAULT_IMPLEMENTATION__ but allowing you to specify another property for your `UITableView`
 ```
 FRC_TABLEVIEW_DEFAULT_IMPLEMENTATION_FOR_TABLEVIEW(self.myNewsTableView);
 ```
 
 <br/>_FRC_TABLEVIEW_DEFAULT_IMPLEMENTATION_UPDATE_SELECTOR(updateSelector)_<br/>
-Same as __FRC_TABLEVIEW_DEFAULT_IMPLEMENTATION__ but allowing you to specify a selector each time your FRC is refreshed.
+Same as __FRC_TABLEVIEW_DEFAULT_IMPLEMENTATION__ but allowing you to specify a selector each time your `NSFetchedResultsController` is refreshed.
 The selector have to be in your view controller, and takes no parameters. It will be called in __controllerDidChangeContent:__ method, so after all changes are processed
 
 ```
@@ -47,11 +50,43 @@ FRC_TABLEVIEW_DEFAULT_IMPLEMENTATION_UPDATE_SELECTOR(@selector(frcRefreshed))
 ```
 
 <br/>_FRC_TABLEVIEW_DEFAULT_IMPLEMENTATION_FOR_TABLEVIEW_UPDATE_SELECTOR_(_tableView, updateSelector)<br/>
-Same as _FRC_TABLEVIEW_DEFAULT_IMPLEMENTATION_UPDATE_SELECTOR but allowing you to specify another property for your tableView.
+Same as __FRC_TABLEVIEW_DEFAULT_IMPLEMENTATION_UPDATE_SELECTOR__ but allowing you to specify another property for your `UITableView`.
 
 ```
 FRC_TABLEVIEW_DEFAULT_IMPLEMENTATION_FOR_TABLEVIEW_UPDATE_SELECTOR(self.myNewsTableView, @selector(frcRefreshed));
 ```
+
+<br/>_FRC_COLLECTIONVIEW_DEFAULT_IMPLEMENTATION_<br/>
+Will provide a default implementation for your class' `NSFetchedResultsController`.
+Assume that your `UIViewController` has a __self.collectionView__ `UICollectionView` property.
+Default implementation will simply add / remove section and rows from your `UICollectionView`.
+__tableView:willDisplayCell:forRowAtIndexPath:__ will be called is an object is refreshed, so you have to implement this method in your `UIViewController`.
+
+```
+FRC_COLLECTIONVIEW_DEFAULT_IMPLEMENTATION
+```
+
+<br/>_FRC_COLLECTIONVIEW_DEFAULT_IMPLEMENTATION_FOR_COLLECTIONVIEW(aCollectionView)_<br/> 
+Same as __FRC_COLLECTIONVIEW_DEFAULT_IMPLEMENTATION__ but allowing you to specify another property for your `UICollectionView`
+```
+FRC_COLLECTIONVIEW_DEFAULT_IMPLEMENTATION_FOR_COLLECTIONVIEW(self.myNewsCollectionView);
+```
+
+<br/>_FRC_COLLECTIONVIEW_DEFAULT_IMPLEMENTATION_UPDATE_SELECTOR(updateSelector)_<br/> 
+Same as __FRC_COLLECTIONVIEW_DEFAULT_IMPLEMENTATION__ but allowing you to specify a selector each time your `NSFetchedResultsController` is refreshed.
+The selector have to be in your view controller, and takes no parameters. It will be called in __controllerDidChangeContent:__ method, so after all changes are processed
+
+```
+FRC_COLLECTIONVIEW_DEFAULT_IMPLEMENTATION_UPDATE_SELECTOR(@selector(frcRefreshed))
+```
+
+<br/>_FRC_COLLECTIONVIEW_DEFAULT_IMPLEMENTATION_FOR_COLLECTIONVIEW_UPDATE_SELECTOR(aCollectionView, updateSelector)_<br/>
+Same as __FRC_COLLECTIONVIEW_DEFAULT_IMPLEMENTATION_UPDATE_SELECTOR__ but allowing you to specify another property for your `UICollectionView`.
+
+```
+_FRC_COLLECTIONVIEW_DEFAULT_IMPLEMENTATION_FOR_COLLECTIONVIEW_UPDATE_SELECTOR(self.myNewsCollectionView, @selector(frcRefreshed));
+```
+
 
 ### GONShortcutsMacros.h
 ### GONUtilsMacros.h
