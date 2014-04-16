@@ -89,8 +89,13 @@ _FRC_COLLECTIONVIEW_DEFAULT_IMPLEMENTATION_FOR_COLLECTIONVIEW_UPDATE_SELECTOR(se
 
 
 ### GONShortcutsMacros.h
+Miscellaneous macros, to disable / enable user interaction on application, to check system version, etc.. Have a look at file to know more 
+
 ### GONUtilsMacros.h
+Utils macros such as nil <=> NSNull conversion, file operations, etc...
+
 ### GONViewMacros.h
+Macros used for easy view frame manipulation, explicit autoresizing mask, etc...
 
 ##Usage
 Simply call macros you want to use with appropriate parameters
