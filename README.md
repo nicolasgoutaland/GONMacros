@@ -1,4 +1,4 @@
 GONMacros
 =========
 
-Set of useful macros
+Set of useful macros and consts
