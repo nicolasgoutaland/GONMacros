@@ -8,9 +8,9 @@
 
 /** Utils macros **/
 // Open URL
-#define OPEN_URL(url)			[APPLICATION openURL:(url)]
-#define OPEN_STRING_URL(url)	[APPLICATION openURL:[NSURL URLWithString:([url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding])]]
-#define CALL_NUMBER(number)		[APPLICATION openURL:[NSURL URLWithString:[@"tel://" stringByAppendingString:[number stringByReplacingOccurrencesOfString:@" " withString:@""]]]]
+#define OPEN_URL(url)                                           [APPLICATION openURL:(url)]
+#define OPEN_STRING_URL(url)                                    [APPLICATION openURL:[NSURL URLWithString:([url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding])]]
+#define CALL_NUMBER(number)                                     [APPLICATION openURL:[NSURL URLWithString:[@"tel://" stringByAppendingString:[number stringByReplacingOccurrencesOfString:@" " withString:@""]]]]
 
 // Files
 #define PATH_DOCUMENTS                                          [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
@@ -23,26 +23,26 @@
 #define FILE_EXISTS_AT_PATH(path)                               [FILE_MANAGER fileExistsAtPath:path]
 
 // Load a nib
-#define LOAD_NIB_NAMED(nibName)                     do{[MAIN_BUNDLE loadNibNamed:nibName owner:self options:nil];}while(0)
+#define LOAD_NIB_NAMED(nibName)                                 do{[MAIN_BUNDLE loadNibNamed:nibName owner:self options:nil];}while(0)
 
 // User interactions
-#define ENABLE_USER_INTERACTIONS                    [APPLICATION endIgnoringInteractionEvents]
-#define DISABLE_USER_INTERACTIONS                   [APPLICATION beginIgnoringInteractionEvents]
+#define ENABLE_USER_INTERACTIONS                                [APPLICATION endIgnoringInteractionEvents]
+#define DISABLE_USER_INTERACTIONS                               [APPLICATION beginIgnoringInteractionEvents]
 
 // Notifications
-#define NOTIFICATION_CENTER_REMOVE                      [NOTIFICATION_CENTER removeObserver:self]
+#define NOTIFICATION_CENTER_REMOVE                              [NOTIFICATION_CENTER removeObserver:self]
 
 // Allow conversion from nil to [NSNull null]
-#define nilToNSNull(value)                              (value ? value : [NSNull null])
-#define NSNullToNil(value)                              ((id)value == [NSNull null] ? nil : value)
+#define nilToNSNull(value)                                      (value ? value : [NSNull null])
+#define NSNullToNil(value)                                      ((id)value == [NSNull null] ? nil : value)
 
 // Device language override
-#define APPLICATION_LANGUAGES_KEY                   @"AppleLanguages"
-#define OVERRIDE_APPLICATION_LANGUAGE(newLang)      do {[USER_DEFAULTS setObject:[NSArray arrayWithObject:newLang] forKey:APPLICATION_LANGUAGES_KEY]; [USER_DEFAULTS synchronize];} while(0)
-#define RESET_APPLICATION_LANGUAGE                  do {[USER_DEFAULTS removeObjectForKey:APPLICATION_LANGUAGES_KEY]; [USER_DEFAULTS synchronize];} while(0)
+#define APPLICATION_LANGUAGES_KEY                               @"AppleLanguages"
+#define OVERRIDE_APPLICATION_LANGUAGE(newLang)                  do {[USER_DEFAULTS setObject:[NSArray arrayWithObject:newLang] forKey:APPLICATION_LANGUAGES_KEY]; [USER_DEFAULTS synchronize];} while(0)
+#define RESET_APPLICATION_LANGUAGE                              do {[USER_DEFAULTS removeObjectForKey:APPLICATION_LANGUAGES_KEY]; [USER_DEFAULTS synchronize];} while(0)
 
 // List all fonts available
-#define DUMP_FONT_LIST do {\
+#define DUMP_FONT_LIST  do {\
     NSArray *familyNames = [[UIFont familyNames] sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"description" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]]];\
     NSArray *fonts;\
     NSLog(@"Listing all availables fonts : ");\

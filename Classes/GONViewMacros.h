@@ -30,13 +30,13 @@
 #define UPDATE_VIEW_CENTER_Y(aView, newY)			do{CGPoint __tmpCenter = aView.center; __tmpCenter.y = (newY); aView.center = __tmpCenter;}while(0)
 
 // Autoresizing mask
-#define UIViewAutoresizingTopAlign      (UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth)
-#define UIViewAutoresizingBottomAlign   (UIViewAutoresizingFlexibleTopMargin    | UIViewAutoresizingFlexibleWidth)
-#define UIViewAutoresizingCentered      (UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin)
-#define UIViewAutoresizingFill          (UIViewAutoresizingFlexibleHeight       | UIViewAutoresizingFlexibleWidth)
+#define UIViewAutoresizingTopAlign                  (UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth)
+#define UIViewAutoresizingBottomAlign               (UIViewAutoresizingFlexibleTopMargin    | UIViewAutoresizingFlexibleWidth)
+#define UIViewAutoresizingCentered                  (UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin)
+#define UIViewAutoresizingFill                      (UIViewAutoresizingFlexibleHeight       | UIViewAutoresizingFlexibleWidth)
 
 // Default components size
-#define STATUS_BAR_DEFAULT_HEIGHT      20
-#define NAVIGATION_BAR_DEFAULT_HEIGHT  44
-#define TOOLBAR_DEFAULT_HEIGHT         44
-#define TABBAR_DEFAULT_HEIGHT          49
+#define STATUS_BAR_DEFAULT_HEIGHT                   20
+#define NAVIGATION_BAR_DEFAULT_HEIGHT               44
+#define TOOLBAR_DEFAULT_HEIGHT                      44
+#define TABBAR_DEFAULT_HEIGHT                       49
