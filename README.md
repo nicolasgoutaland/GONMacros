@@ -155,4 +155,5 @@ Import wanted headers in your project. .pch is a good place ;)
 You can also import GONMacros_All.h to add all macros in your project
 
 ##Versions
-1.0 : Initial release<br/>
+1.0   : Initial release<br/>
+1.0.1 : Formating, added some parenthesis to macros<br/>
