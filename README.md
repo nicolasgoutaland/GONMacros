@@ -89,21 +89,63 @@ _FRC_COLLECTIONVIEW_DEFAULT_IMPLEMENTATION_FOR_COLLECTIONVIEW_UPDATE_SELECTOR(se
 
 
 ### GONShortcutsMacros.h
-Miscellaneous macros, to disable / enable user interaction on application, to check system version, etc.. Have a look at file to know more 
+Miscellaneous macros, to disable / enable user interaction on application, to check system version, etc.. Have a look at file to know more
+
+```
+IS_RETINA_SCREEN()
+IS_IPHONE()
+IS_IPAD()
+IS_IPHONE_5()
+
+SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.1");
+SYSTEM_VERSION_IS_IOS6_OR_GREATER();
+SYSTEM_VERSION_IS_IOS7_OR_GREATER();
+```
 
 ### GONUtilsMacros.h
 Utils macros such as nil <=> NSNull conversion, file operations, etc...
 
+```
+// nil / NSNull convertion
+nilToNSNull(value)
+NSNullToNil(value)
+
+// Unsubscribe current object from all notifications
+NOTIFICATION_CENTER_REMOVE
+
+// User interaction (when using animations for example)
+ENABLE_USER_INTERACTIONS
+DISABLE_USER_INTERACTIONS
+
+// Xib
+LOAD_NIB_NAMED(@"myXib");
+
+// Files manipulation
+PATH_DOCUMENTS
+PATH_LIBRARY
+REMOVE_ITEM_AT_PATH()
+FILE_EXISTS_AT_PATH()
+```
+
 ### GONViewMacros.h
 Macros used for easy view frame manipulation, explicit autoresizing mask, etc...
 
+```
+// Frame update
+UPDATE_FRAME_X(10);                     // When called from a UIView subclass
+UPDATE_VIEW_FRAME_X(_tableView, 15.0);  // To specify view to update
+
+UPDATE_VIEW_FRAME_HEIGHT(_tableView, 150.0);
+
+// Autoresizing masks
+self.view.autoresizingMask = UIViewAutoresizingTopAlign;        // View will stay top aligned to its parent view, without resizing
+self.view.autoresizingMask = UIViewAutoresizingBottomAlign;     // View will stay bottom aligned to its parent view, without resizing
+self.view.autoresizingMask = UIViewAutoresizingCentered;        // View will stay centered in parent view, without resizing
+self.view.autoresizingMask = UIViewAutoresizingFill;            // View will stay centered in parent view, with resizing in all directions
+```
+
 ##Usage
 Simply call macros you want to use with appropriate parameters
-
-##Example
-```objective-c
-
-```
 
 ##Installation
 __Cocoapods__: `pod 'GONMacros'`<br>
