@@ -42,7 +42,7 @@
 #define RESET_APPLICATION_LANGUAGE                              do {[USER_DEFAULTS removeObjectForKey:APPLICATION_LANGUAGES_KEY]; [USER_DEFAULTS synchronize];} while(0)
 
 // List all fonts available
-#define DUMP_FONT_LIST  do {\
+#define DUMP_FONT_LIST()  do {\
     NSArray *familyNames = [[UIFont familyNames] sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"description" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]]];\
     NSArray *fonts;\
     NSLog(@"Listing all availables fonts : ");\
