@@ -120,6 +120,9 @@ DISABLE_USER_INTERACTIONS
 // Xib
 LOAD_NIB_NAMED(@"myXib");
 
+// Dump all available font on device. Useful to check if custom font are right imported and check there names
+DUMP_FONT_LIST()
+
 // Files manipulation
 PATH_DOCUMENTS
 PATH_LIBRARY
