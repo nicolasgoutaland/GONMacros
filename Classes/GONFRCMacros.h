@@ -24,6 +24,8 @@
                             [aTableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] \
                                       withRowAnimation:UITableViewRowAnimationFade]; \
                         break; \
+						default:\
+						break;\
                     } \
                 } \
         - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject \
@@ -101,6 +103,8 @@ static char const *__ ## aCollectionView ## objectsKey;\
         case NSFetchedResultsChangeDelete:\
             change[@(type)] = @[@(sectionIndex)];\
         break;\
+		default:\
+		break;\
     }\
     [__sectionsChanges addObject:change];\
 }\
@@ -126,6 +130,8 @@ static char const *__ ## aCollectionView ## objectsKey;\
                     case NSFetchedResultsChangeUpdate:\
                         [aCollectionView reloadSections:[NSIndexSet indexSetWithIndex:[obj unsignedIntegerValue]]];\
                     break;\
+					default:\
+					break;\
                 }\
             }];\
         }\
