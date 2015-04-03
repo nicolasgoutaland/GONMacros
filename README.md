@@ -147,6 +147,70 @@ self.view.autoresizingMask = UIViewAutoresizingCentered;        // View will sta
 self.view.autoresizingMask = UIViewAutoresizingFill;            // View will stay centered in parent view, with resizing in all directions
 ```
 
+### GONSharedInstanceMacro.h
+Macros used to add a shared instance to any class
+
+```
+SHARED_INSTANCE_PROTO;              // Macro to put in your header file, if you want your sharedInstance method to be public
+
+SHARED_INSTANCE_IMPL;               // Macro to put in your implementation file, if you want your sharedInstance method to be public
+SHARED_INSTANCE(myClass)            // Macro to put in your implementation file, at top to implement sharedInstance
+SHARED_INSTANCE_TERMINATE(myClass, selector)  // Same as SHARED_INSTANCE, but allowing to to set a selector automatically called when application will terminate
+```
+
+### GONMaths.h
+Math related macros
+
+```
+DEGREES_TO_RADIANS(degrees)
+RADIANS_TO_DEGREES(radians)
+```
+
+### GONDevices.h
+Macros used to determine current devices, base on screen size.
+
+```
+IS_IPHONE()
+IS_IPAD()
+IS_IPHONE_5()
+IS_IPHONE_6()
+IS_IPHONE_6Plus()
+```
+
+### GONLogMacros.h
+Log macros. Used to pretty print objects
+You can trim them on compilation by setting **__GON_TRIM_LOG_MACROS__** flag
+By default, log use __NSLog__. You can set another logger by overriding GON_LOGGER macro.
+
+```
+GONLog(msg, ...)
+LOG_VIEW(view)
+FRAME_TO_STRING(frame)
+RECT_TO_STRING(rect)
+POINT_TO_STRING(point)
+SIZE_TO_STRING(size)
+OBJ_TO_STRING(obj)
+LOG_FRAME(frame)
+LOG_RECT(rect)
+LOG_POINT(point)
+LOG_SIZE(size)
+LOG_OBJ(obj)
+DATA_TO_STR(data, dataEnc)
+DATA_TO_UTF8_STRING(data)
+COORDINATE_REGION_TO_STRING(region)
+COORDINATE_SPAN_TO_STRING(span)
+MAP_POINT_TO_STRING(mapPoint)
+MAP_SIZE_TO_STRING(mapSize)
+LOCATION_COORDINATE_2D_TO_STRING(coordinate)
+MAP_RECT_TO_STRING(mapRect)
+LOG_COORDINATE_REGION(region)
+LOG_COORDINATE_SPAN(span)
+LOG_MAP_POINT(mapPoint)
+LOG_MAP_SIZE(mapSize)
+LOG_LOCATION_COORDINATE_2D(coordinate)
+LOG_MAP_RECT(mapRect)
+```
+
 ##Usage
 Simply call macros you want to use with appropriate parameters
 
@@ -160,3 +224,8 @@ You can also import GONMacros_All.h to add all macros in your project
 ##Versions
 1.0   : Initial release<br/>
 1.0.1 : Formating, added some parenthesis to macros<br/>
+1.0.2 : Refactoring
+1.0.3 : Fixed bug on FRC macros
+1.0.4 : Refactoring
+1.1   : Added new macros
+
