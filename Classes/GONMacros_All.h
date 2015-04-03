@@ -12,4 +12,9 @@
 	#import "GONShortcutsMacros.h"
 	#import "GONUtilsMacros.h"
 	#import "GONViewMacros.h"
+    #import "GONMaths.h"
+    #import "GONDevices.h"
+    #import "GONSharedInstanceMacro.h"
+    #import "GONSingletonMacro.h"
+    #import "GONLogMacros.h"
 #endif

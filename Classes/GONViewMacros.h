@@ -39,4 +39,4 @@
 #define STATUS_BAR_DEFAULT_HEIGHT                   20
 #define NAVIGATION_BAR_DEFAULT_HEIGHT               44
 #define TOOLBAR_DEFAULT_HEIGHT                      44
-#define TABBAR_DEFAULT_HEIGHT                       49
+#define TABBAR_DEFAULT_HEIGHT                       56
