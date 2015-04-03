@@ -15,6 +15,5 @@
     #import "GONMaths.h"
     #import "GONDevices.h"
     #import "GONSharedInstanceMacro.h"
-    #import "GONSingletonMacro.h"
     #import "GONLogMacros.h"
 #endif
