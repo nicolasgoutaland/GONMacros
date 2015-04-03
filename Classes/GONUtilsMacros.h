@@ -26,8 +26,8 @@
 #define LOAD_NIB_NAMED(nibName)                                 do{[MAIN_BUNDLE loadNibNamed:nibName owner:self options:nil];}while(0)
 
 // User interactions
-#define ENABLE_USER_INTERACTIONS                                [[APPLICATION delegate] endIgnoringInteractionEvents]
-#define DISABLE_USER_INTERACTIONS                               [[APPLICATION delegate] beginIgnoringInteractionEvents]
+#define ENABLE_USER_INTERACTIONS                                [APPLICATION endIgnoringInteractionEvents]
+#define DISABLE_USER_INTERACTIONS                               [APPLICATION beginIgnoringInteractionEvents]
 
 // Notifications
 #define NOTIFICATION_CENTER_REMOVE                              [NOTIFICATION_CENTER removeObserver:self]
