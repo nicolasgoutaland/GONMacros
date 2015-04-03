@@ -22,10 +22,6 @@
 #define REMOVE_ITEM_AT_PATH(path)                               [FILE_MANAGER removeItemAtPath:path error:nil]
 #define FILE_EXISTS_AT_PATH(path)                               [FILE_MANAGER fileExistsAtPath:path]
 
-// Network
-#define NETWORK_ACTIVITY_ON                                     [APP_DELEGATE enableNetworkIndicator]
-#define NETWORK_ACTIVITY_OFF                                    [APP_DELEGATE disableNetworkIndicator]
-
 // Load a nib
 #define LOAD_NIB_NAMED(nibName)                                 do{[MAIN_BUNDLE loadNibNamed:nibName owner:self options:nil];}while(0)
 
