@@ -36,27 +36,5 @@
 // Application informations
 #define APPLICATION_NAME                            ([[[MAIN_BUNDLE executablePath] pathComponents] lastObject])
 #define APPLICATION_VERSION                         [MAIN_BUNDLE objectForInfoDictionaryKey:@"CFBundleVersion"]
-
-// Device informations
-#define DEVICE_MODEL                                [CURRENT_DEVICE model]
-#define DEVICE_LOCALIZED_MODEL                      [CURRENT_DEVICE localizedModel]
-#define DEVICE_PLATFORM                             [CURRENT_DEVICE platform]
-#define DEVICE_SYSTEM_NAME                          [CURRENT_DEVICE systemName]
-#define DEVICE_SYSTEM_VERSION                       [CURRENT_DEVICE systemVersion]
-
-// Device screen specifications / interface idiom
-#define IS_RETINA_SCREEN()                          (MAIN_SCREEN.scale > 1.0)
-#define IS_IPHONE() 								(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
-#define IS_IPAD()		 							(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-#define IS_IPHONE_5()  								((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) && [UIScreen mainScreen].bounds.size.height == 568)
-#define IS_IPHONE_6()  								((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) && [UIScreen mainScreen].bounds.size.height == 667)
-#define IS_IPHONE_6_PLUS()                          ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) && [UIScreen mainScreen].bounds.size.height == 736)
-
-// System version
-#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[CURRENT_DEVICE systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
-#define SYSTEM_VERSION_IS_IOS4_OR_GREATER()          SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"4.0")
-#define SYSTEM_VERSION_IS_IOS5_OR_GREATER()          SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"5.0")
-#define SYSTEM_VERSION_IS_IOS6_OR_GREATER()          SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"6.0")
-#define SYSTEM_VERSION_IS_IOS7_OR_GREATER()          SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")
-#define SYSTEM_VERSION_IS_IOS8_OR_GREATER()          SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0")
-#define SYSTEM_VERSION_IS_IOS9_OR_GREATER()          SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"9.0")
+#define APPLICATION_BUILD_VERSION                   [MAIN_BUNDLE objectForInfoDictionaryKey:@"CFBundleVersion"]
+#define APPLICATION_BUNDLE_ID                       [MAIN_BUNDLE objectForInfoDictionaryKey:@"CFBundleIdentifier"]
