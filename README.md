@@ -152,7 +152,7 @@ FILE_EXISTS_AT_PATH()
 ```
 
 ### GONViewMacros.h
-Macros used for easy view frame manipulation, explicit autoresizing mask, etc...
+Macros used for easy view frame/bounds manipulation, explicit autoresizing mask, etc...
 
 ```
 // Frame update
