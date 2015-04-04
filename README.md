@@ -89,24 +89,45 @@ _FRC_COLLECTIONVIEW_DEFAULT_IMPLEMENTATION_FOR_COLLECTIONVIEW_UPDATE_SELECTOR(se
 
 
 ### GONShortcutsMacros.h
-Miscellaneous macros, to disable / enable user interaction on application, to check system version, etc.. Have a look at file to know more
-
+Shortcut macros to access several iOS framework sharedInstance, 
 ```
-IS_RETINA_SCREEN()
-IS_IPHONE()
-IS_IPAD()
-IS_IPHONE_5()
+// NSLocalizedString
+LOCALIZED_STRING(string)               
 
-SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.1");
-SYSTEM_VERSION_IS_IOS6_OR_GREATER();
-SYSTEM_VERSION_IS_IOS7_OR_GREATER();
+// Lang shortcuts
+LANG                                       
+LANG_DISPLAY                               
+
+// Shared instance shortcuts
+NOTIFICATION_CENTER                        
+FILE_MANAGER                               
+MAIN_BUNDLE                                
+MAIN_THREAD                                
+MAIN_SCREEN                                
+USER_DEFAULTS                              
+APPLICATION                                
+CURRENT_DEVICE                             
+MAIN_RUN_LOOP                              
+GENERAL_PASTEBOARD                         
+
+// Network
+NETWORK_ACTIVITY                           
+
+// Color consts
+CLEAR_COLOR                                
+
+// Application informations
+APPLICATION_NAME                           
+APPLICATION_VERSION                        
+APPLICATION_BUILD_VERSION                  
+APPLICATION_BUNDLE_ID                      
 ```
 
 ### GONUtilsMacros.h
-Utils macros such as nil <=> NSNull conversion, file operations, etc...
-
+Utils macros such as nil <=> NSNull conversion, file operations, to disable / enable user interaction on application, etc...
+Check file for more information
 ```
-// nil / NSNull convertion
+// nil / NSNull conversion
 nilToNSNull(value)
 NSNullToNil(value)
 
@@ -167,14 +188,21 @@ RADIANS_TO_DEGREES(radians)
 ```
 
 ### GONDevices.h
-Macros used to determine current devices, base on screen size.
+Macros used to determine current device, system version, etc...
 
 ```
+// Device
 IS_IPHONE()
 IS_IPAD()
 IS_IPHONE_5()
 IS_IPHONE_6()
 IS_IPHONE_6Plus()
+
+// System version
+SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.1");
+SYSTEM_VERSION_IS_IOS6_OR_GREATER();
+SYSTEM_VERSION_IS_IOS7_OR_GREATER();
+SYSTEM_VERSION_IS_IOS8_OR_GREATER();
 ```
 
 ### GONLogMacros.h
@@ -228,4 +256,5 @@ You can also import GONMacros_All.h to add all macros in your project
 1.0.3 : Fixed bug on FRC macros
 1.0.4 : Refactoring
 1.1   : Added new macros
+1.1.1 : Refactoring, new macros
 
