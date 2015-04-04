@@ -89,7 +89,7 @@ _FRC_COLLECTIONVIEW_DEFAULT_IMPLEMENTATION_FOR_COLLECTIONVIEW_UPDATE_SELECTOR(se
 
 
 ### GONShortcutsMacros.h
-Shortcut macros to access several iOS framework sharedInstance, 
+Shortcut macros to access several iOS framework sharedInstance
 ```
 // NSLocalizedString
 LOCALIZED_STRING(string)               
@@ -111,10 +111,10 @@ MAIN_RUN_LOOP
 GENERAL_PASTEBOARD                         
 
 // Network
-NETWORK_ACTIVITY                           
+NETWORK_ACTIVITY              // Check if network activity indicator is displayed or not                      
 
 // Color consts
-CLEAR_COLOR                                
+CLEAR_COLOR                   // Shortcut for [UIColor clearColor]
 
 // Application informations
 APPLICATION_NAME                           
@@ -139,7 +139,7 @@ ENABLE_USER_INTERACTIONS
 DISABLE_USER_INTERACTIONS
 
 // Xib
-LOAD_NIB_NAMED(@"myXib");
+LOAD_NIB_NAMED(@"myXib")      // Load a xib, using self as owner
 
 // Dump all available font on device. Useful to check if custom font are right imported and check there names
 DUMP_FONT_LIST()
@@ -179,12 +179,19 @@ SHARED_INSTANCE(myClass)            // Macro to put in your implementation file,
 SHARED_INSTANCE_TERMINATE(myClass, selector)  // Same as SHARED_INSTANCE, but allowing to to set a selector automatically called when application will terminate
 ```
 
-### GONMaths.h
+### GONCoreGraphics.h
 Math related macros
 
 ```
 DEGREES_TO_RADIANS(degrees)
 RADIANS_TO_DEGREES(radians)
+```
+
+### GONMaths.h
+CoreGraphics related macros
+
+```
+CGizeMultiply(size, mult)       // Will return a size with members multiplied by mult
 ```
 
 ### GONDevices.h
@@ -197,6 +204,13 @@ IS_IPAD()
 IS_IPHONE_5()
 IS_IPHONE_6()
 IS_IPHONE_6Plus()
+
+// Device information
+DEVICE_MODEL                                
+DEVICE_LOCALIZED_MODEL                      
+DEVICE_PLATFORM                             
+DEVICE_SYSTEM_NAME                          
+DEVICE_SYSTEM_VERSION                       
 
 // System version
 SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.1");
