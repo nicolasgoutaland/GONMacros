@@ -266,9 +266,9 @@ You can also import GONMacros_All.h to add all macros in your project
 ##Versions
 1.0   : Initial release<br/>
 1.0.1 : Formating, added some parenthesis to macros<br/>
-1.0.2 : Refactoring
-1.0.3 : Fixed bug on FRC macros
-1.0.4 : Refactoring
-1.1   : Added new macros
-1.1.1 : Refactoring, new macros
+1.0.2 : Refactoring<br/>
+1.0.3 : Fixed bug on FRC macros<br/>
+1.0.4 : Refactoring<br/>
+1.1   : Added new macros<br/>
+1.1.1 : Refactoring, new macros<br/>
 
