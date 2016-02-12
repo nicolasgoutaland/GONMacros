@@ -257,7 +257,7 @@ LOG_MAP_RECT(mapRect)
 Simply call macros you want to use with appropriate parameters
 
 ##Installation
-__Cocoapods__: `pod 'GONMacros'`<br>
+__CocoaPods__: `pod 'GONMacros'`<br>
 __Manual__: Copy the __Classes__ folder in your project<br>
 
 Import wanted headers in your project. .pch is a good place ;)
