@@ -34,7 +34,7 @@
 #define CLEAR_COLOR                                 [UIColor clearColor]
 
 // Application informations
-#define APPLICATION_NAME                            ([[[MAIN_BUNDLE executablePath] pathComponents] lastObject])
+#define APPLICATION_NAME                            [MAIN_BUNDLE objectForInfoDictionaryKey:@"CFBundleDisplayName"]
 #define APPLICATION_VERSION                         [MAIN_BUNDLE objectForInfoDictionaryKey:@"CFBundleShortVersionString"]
 #define APPLICATION_BUILD_VERSION                   [MAIN_BUNDLE objectForInfoDictionaryKey:@"CFBundleVersion"]
 #define APPLICATION_BUNDLE_ID                       [MAIN_BUNDLE objectForInfoDictionaryKey:@"CFBundleIdentifier"]
