@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "GONMacros"
-  s.version      = "1.1.3"
+  s.version      = "1.1.4"
   s.summary      = "Just a bunch of useful macros"
   s.platform 	 = :ios, "7.0"
   s.description  = <<-DESC
