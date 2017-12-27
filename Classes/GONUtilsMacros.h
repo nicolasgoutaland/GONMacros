@@ -16,8 +16,8 @@
 #define PATH_DOCUMENTS                                          [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
 #define PATH_LIBRARY                                            [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0]
 #define PATH_PRIVATE_STORAGE                                    [[PATH_LIBRARY stringByAppendingPathComponent:@"Caches"] stringByAppendingPathComponent:@"PrivateStorage"]
-#define PATH_FOR_RESOURCE(file, ext)                            (file ? [MAIN_BUNDLE pathForResource:(file) ofType:ext] : nil)
-#define PATH_FOR_RESOURCE_IN_DIRECTORY(file, ext, directory)    (file ? [MAIN_BUNDLE pathForResource:(file) ofType:ext inDirectory:directory] : nil)
+#define PATH_FOR_RESOURCE(file, ext)                            ((file != nil) ? [MAIN_BUNDLE pathForResource:(file) ofType:ext] : nil)
+#define PATH_FOR_RESOURCE_IN_DIRECTORY(file, ext, directory)    ((file != nil) ? [MAIN_BUNDLE pathForResource:(file) ofType:ext inDirectory:directory] : nil)
 #define TEMPORARY_FILE_PATH                                     [NSTemporaryDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"%f", [NSDate timeIntervalSinceReferenceDate]]]
 #define REMOVE_ITEM_AT_PATH(path)                               [FILE_MANAGER removeItemAtPath:path error:nil]
 #define FILE_EXISTS_AT_PATH(path)                               [FILE_MANAGER fileExistsAtPath:path]
